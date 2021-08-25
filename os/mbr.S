@@ -33,7 +33,7 @@ SECTION MBR vstart=0x7c00
     mov byte [gs:0x06], 'B'
     mov byte [gs:0x07], 0xA4
 
-    mov byte [gs:0x08], 'A'
+    mov byte [gs:0x08], 'R'
     mov byte [gs:0x09], 0xA4
 
     mov eax, LOADER_START_SECTOR
@@ -41,7 +41,7 @@ SECTION MBR vstart=0x7c00
     mov cx, 4
     call rd_disk_m_16
 
-    jmp LOADER_BASE_ADDR+0x300;
+    jmp LOADER_BASE_ADDR
 
 ;-----------------------------------------------------------
 ; 读取磁盘的n个扇区，用于加载loader
